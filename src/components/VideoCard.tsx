@@ -26,11 +26,11 @@ export const VideoCard = ({
 }: VideoCardProps) => {
   return (
     <Card
-      className="group relative overflow-hidden nothing-card-hover cursor-pointer bg-card border-border/50"
+      className="group relative overflow-hidden nothing-card-hover cursor-pointer bg-card border-border/50 active:scale-[0.98] nothing-transition"
       onClick={onClick}
     >
       {/* Thumbnail */}
-      <div className="relative aspect-video overflow-hidden bg-nothing-gray-dark">
+      <div className="relative aspect-video overflow-hidden bg-nothing-gray-dark touch-manipulation">
         <img
           src={thumbnail}
           alt={title}
@@ -61,18 +61,18 @@ export const VideoCard = ({
       </div>
 
       {/* Info */}
-      <div className="p-3 space-y-2">
+      <div className="p-4 space-y-2.5">
         <div className="flex items-start justify-between gap-2">
-          <h3 className="text-sm font-medium line-clamp-2 flex-1">{title}</h3>
+          <h3 className="text-sm md:text-base font-medium line-clamp-2 flex-1 leading-snug">{title}</h3>
           <Button
             variant="ghost"
             size="icon"
-            className="h-8 w-8 flex-shrink-0 opacity-0 group-hover:opacity-100"
+            className="h-9 w-9 flex-shrink-0 md:opacity-0 md:group-hover:opacity-100"
             onClick={(e) => {
               e.stopPropagation();
             }}
           >
-            <MoreVertical className="h-4 w-4" />
+            <MoreVertical className="h-5 w-5" />
           </Button>
         </div>
 

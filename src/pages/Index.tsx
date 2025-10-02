@@ -85,19 +85,19 @@ const Index = () => {
     <div className="min-h-screen bg-background">
       <Header viewMode={viewMode} onViewModeChange={setViewMode} />
 
-      <main className="container mx-auto px-4 py-8 space-y-12">
+      <main className="px-4 py-6 md:py-8 space-y-8 md:space-y-12 max-w-7xl mx-auto">
         {/* Folders Section */}
         <section>
-          <div className="flex items-center justify-between mb-6">
-            <h2 className="text-2xl font-bold tracking-tight">Folders</h2>
-            <span className="text-sm text-muted-foreground dot-matrix">
+          <div className="flex items-center justify-between mb-4 md:mb-6">
+            <h2 className="text-xl md:text-2xl font-bold tracking-tight">Folders</h2>
+            <span className="text-xs md:text-sm text-muted-foreground dot-matrix">
               {folders.length} FOLDERS
             </span>
           </div>
           <div
-            className={`grid gap-4 ${
+            className={`grid gap-3 md:gap-4 ${
               viewMode === "grid"
-                ? "grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
+                ? "grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
                 : "grid-cols-1"
             }`}
           >
@@ -115,16 +115,16 @@ const Index = () => {
 
         {/* Recent Videos Section */}
         <section>
-          <div className="flex items-center justify-between mb-6">
-            <h2 className="text-2xl font-bold tracking-tight">Recent</h2>
-            <span className="text-sm text-muted-foreground dot-matrix">
+          <div className="flex items-center justify-between mb-4 md:mb-6">
+            <h2 className="text-xl md:text-2xl font-bold tracking-tight">Recent</h2>
+            <span className="text-xs md:text-sm text-muted-foreground dot-matrix">
               {recentVideos.length} VIDEOS
             </span>
           </div>
           <div
-            className={`grid gap-4 ${
+            className={`grid gap-3 md:gap-4 ${
               viewMode === "grid"
-                ? "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
+                ? "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3"
                 : "grid-cols-1"
             }`}
           >
@@ -145,18 +145,18 @@ const Index = () => {
         </section>
 
         {/* Stats footer */}
-        <div className="pt-8 border-t border-border/50">
-          <div className="flex items-center justify-center gap-8 text-sm text-muted-foreground">
+        <div className="pt-6 md:pt-8 pb-4 border-t border-border/50">
+          <div className="flex flex-wrap items-center justify-center gap-4 md:gap-8 text-xs md:text-sm text-muted-foreground">
             <div className="flex items-center gap-2">
-              <span className="dot-matrix">TOTAL STORAGE:</span>
+              <span className="dot-matrix">STORAGE:</span>
               <span className="text-foreground">256.8 GB</span>
             </div>
-            <div className="w-px h-4 bg-border" />
+            <div className="w-px h-4 bg-border hidden sm:block" />
             <div className="flex items-center gap-2">
               <span className="dot-matrix">VIDEOS:</span>
               <span className="text-foreground">311</span>
             </div>
-            <div className="w-px h-4 bg-border" />
+            <div className="w-px h-4 bg-border hidden sm:block" />
             <div className="flex items-center gap-2">
               <span className="dot-matrix">FOLDERS:</span>
               <span className="text-foreground">4</span>
